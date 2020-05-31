@@ -19,8 +19,6 @@ public class ClienteDAO implements Validar{
             
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
-            ps.setString(1, cli.getUser());
-            ps.setString(2, cli.getContra());
             rs = ps.executeQuery();
             
             while(rs.next()) {

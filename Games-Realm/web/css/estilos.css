@@ -169,11 +169,3 @@ a, a:hover, a:focus {
     color: #E8E8E8; 
     font-family: 'Open Sans', sans-serif;
 }
-
-hr { display: block; 
-     height: 1px;
-     border: 0; 
-     border-top: 2px solid #FFFFFF;
-     margin: 1em 0; 
-     padding: 0; 
-}

@@ -1,42 +1,37 @@
-
 package controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.Cliente;
+import modelo.ClienteDAO;
 
-/**
- *
- * @author alis0
- */
 public class Controlador extends HttpServlet {
-
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    
+    ClienteDAO dao=new ClienteDAO();
+    Cliente c=new Cliente();
+    int r;
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Controlador</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Controlador at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        String accion=request.getParameter("accion");
+        
+        if(accion != null) {
+            String us=request.getParameter("txtuser");
+            String contraseña=request.getParameter("txtcontra");
+            c.setUser(us);
+            c.setContra(contraseña);
+            r=dao.validar(c);
+            
+            request.getSession().setAttribute("r", r);
+            request.getSession().setAttribute("us", us);
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+            
         }
     }
 
