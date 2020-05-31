@@ -13,20 +13,28 @@ public class ClienteDAO implements Validar{
        
     @Override
     public int validar(Cliente cli) {
-        int nivel=0;
-        String sql = "select Email, Pass from Cliente where Email=? and Pass=?";
+        int r=0;
+        String sql = "select Nivel from Cliente where Email=? and Pass=?";
         try {
             
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
+            ps.setString(1, cli.getEmail());
+            ps.setString(2, cli.getContra());
             rs = ps.executeQuery();
             
             while(rs.next()) {
-                nivel=rs.getInt(1);
+                r=rs.getInt("Nivel");
             }
-            con.close();
-            rs.close();
-            return nivel;
+            if(r==1){
+                return 1;
+            } 
+            if (r==2){
+                return 2;
+            } else {
+                return 0;
+            }
+            
         } catch (Exception e) {
             
             System.out.println("Ocurrio un error clienteDAO");

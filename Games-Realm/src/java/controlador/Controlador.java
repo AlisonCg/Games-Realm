@@ -21,17 +21,29 @@ public class Controlador extends HttpServlet {
             throws ServletException, IOException {
         String accion=request.getParameter("accion");
         
-        if(accion != null) {
+        if(accion.equals("Ingresar")) {
             String us=request.getParameter("txtuser");
             String contraseña=request.getParameter("txtcontra");
-            c.setUser(us);
+            c.setEmail(us);
             c.setContra(contraseña);
             r=dao.validar(c);
             
-            request.getSession().setAttribute("r", r);
-            request.getSession().setAttribute("us", us);
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            if(r==1) {
+                request.getSession().setAttribute("us", us);
+                request.getSession().setAttribute("contraseña", contraseña);
+                request.getRequestDispatcher("Administrador.jsp").forward(request, response);
+                
+            }
             
+            if(r==2){
+                request.getSession().setAttribute("us", us);
+                request.getSession().setAttribute("contraseña", contraseña);
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+            } else {
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+            }
+        }else {
+            request.getRequestDispatcher("login.jsp").forward(request, response);
         }
     }
 

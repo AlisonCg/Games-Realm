@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session="true"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,7 +30,7 @@
             <hr>
             <h6 style="text-align: center">¿Aún no tienes cuenta?</h6>
             <a class="btn btn-primary btn-lg" href="registro.jsp">Crear cuenta</a>
-        </div>
+        </div>        
         <script src="js/JQuery.js" type="text/javascript"></script>
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
