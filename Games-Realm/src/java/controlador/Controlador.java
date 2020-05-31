@@ -31,13 +31,15 @@ public class Controlador extends HttpServlet {
             if(r==1) {
                 request.getSession().setAttribute("us", us);
                 request.getSession().setAttribute("contraseña", contraseña);
-                request.getRequestDispatcher("Administrador.jsp").forward(request, response);
+                request.getSession().setAttribute("r", r);
+                request.getRequestDispatcher("index.jsp").forward(request, response);
                 
             }
             
             if(r==2){
                 request.getSession().setAttribute("us", us);
                 request.getSession().setAttribute("contraseña", contraseña);
+                request.getSession().setAttribute("r", r);
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             } else {
                 request.getRequestDispatcher("login.jsp").forward(request, response);

@@ -33,9 +33,22 @@
                     <li class="nav-item-2 active">
                         <a class="nav-link" href="#">HOME<span class="sr-only">(current)</span></a>
                     </li>
+                    <%  HttpSession sesion = request.getSession();
+                            int n = 1;  
+                            if(sesion.getAttribute("r").equals(n))
+                            {
+                    %>
                     <li class="nav-item">
                         <a class="nav-link" href="Novedades.jsp">NOVEDADES</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Administrador.jsp">PRODUCTOS</a>
+                    </li> 
+                    <%}else{%>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Novedades.jsp">NOVEDADES</a>
+                    </li>
+                    <%}%>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             VIDEOJUEGOS
@@ -79,7 +92,13 @@
                 <span>
                     <ul class="navbar-nav my-2 my-lg-0">
                         <li class="nav-item">
+                        <%  HttpSession sesionI = request.getSession();
+                            if(sesionI.getAttribute("us")==null){
+                        %>
                           <a class="nav-link" href="login.jsp"><img src="img/ini.png" class="hover" style="height: 25px; width: 25px; margin-right: .5vw">INICIAR SESIÓN</a>
+                        <%  }else{%>
+                          <a class="nav-link" href="login.jsp"><img src="img/ini.png" class="hover" style="height: 25px; width: 25px; margin-right: .5vw">CERRAR SESIÓN</a>
+                        <%}%>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"><img src="img/carrito.png" class="hover" style="height: 25px; width: 25px"></a>
