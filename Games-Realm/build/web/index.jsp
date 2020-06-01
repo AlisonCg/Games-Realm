@@ -41,10 +41,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="Novedades.jsp">NOVEDADES</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Administrador.jsp">PRODUCTOS</a>
-                    </li> 
-                    <%}else{%>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            PRODUCTOS
+                        </a>
+                        <ul class="dropdown-menu bg-dark" style="font-size: 10px" id="navbarHover">
+                            <li><a class="dropdown-item nav-link" href="Agregar.jsp">AGREGAR</a>   
+                            </li>
+                            <li><a class="dropdown-item nav-link" href="Editar.jsp">EDITAR</a>
+                            </li>
+                            <li><a class="dropdown-item nav-link" href="Eliminar.jsp">ELIMINAR</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <%}else{
+                    %>
                     <li class="nav-item">
                         <a class="nav-link" href="Novedades.jsp">NOVEDADES</a>
                     </li>
@@ -97,7 +108,7 @@
                         %>
                           <a class="nav-link" href="login.jsp"><img src="img/ini.png" class="hover" style="height: 25px; width: 25px; margin-right: .5vw">INICIAR SESIÓN</a>
                         <%  }else{%>
-                          <a class="nav-link" href="login.jsp"><img src="img/ini.png" class="hover" style="height: 25px; width: 25px; margin-right: .5vw">CERRAR SESIÓN</a>
+                          <a class="nav-link" href="logout"><img src="img/ini.png" class="hover" style="height: 25px; width: 25px; margin-right: .5vw">CERRAR SESIÓN</a>
                         <%}%>
                         </li>
                         <li class="nav-item">
@@ -130,33 +141,18 @@
                     <img src="img/index/Mortal_Kombat11_2.jpg">
                     <div class="carousel-caption">
                         <h1 class="display-2" style="margin-top: 10vw; font-family: 'Impact', sans-serif; color: white">Mortal Kombat 11</h1>
-                        <button type="button" class="btn-2 btn-primary-2 btn-lg">
-                            <a style="text-decoration:none" href="vista_p_u.jsp?nombre=Mortal Kombat 11" class="button">
-                                CONSÍGUELO AHORA<bold>&nbsp;&nbsp;&nbsp;&nbsp;></bold>
-                            </a>
-                        </button>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="img/index/Call_of_duty.png" alt="">
                     <div class="carousel-caption">
                         <h1 class="display-2"  style="margin-top: 20vw"></h1>
-                        <button type="button" class="btn-2 btn-primary-2 btn-lg">
-                            <a style="text-decoration:none" href="vista_p_u.jsp?nombre=Call of Duty Black Ops III" class="button">
-                                CONSÍGUELO AHORA<bold>&nbsp;&nbsp;&nbsp;&nbsp;></bold>
-                            </a>
-                        </button>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="img/index/over.png" alt="">
                     <div class="carousel-caption">
                         <h1 class="display-2" style="margin-top: 20vw"></h1>
-                        <button type="button" class="btn-2 btn-primary-2 btn-lg">
-                            <a style="text-decoration:none" href="vista_p_u.jsp?nombre=Overwatch" class="button">
-                                CONSÍGUELO AHORA<bold>&nbsp;&nbsp;&nbsp;&nbsp;></bold>
-                            </a>
-                        </button>
                     </div>
                 </div>
             </div>
@@ -169,7 +165,7 @@
                 <div class="col clearfix">
                     <%--BD_Link_Imagen | BD_Link_Nombre | BD_Link_Nombre | BD_Link_Precio--%>
                     <a style="text-decoration:none" href="vista_p_u.jsp?nombre=Sekiro Shadows Die Twice">
-                        <img class="hover2" src="" style="width: 96%">
+                        <img class="hover2" src="https://store-images.s-microsoft.com/image/apps.50432.69038865179152125.af885fa8-7b94-47b1-be3a-d2ab6af95a6a.c33c3798-0863-4898-b436-ff5050ffebd1?mode=scale&q=90&h=300&w=200" style="width: 96%">
                         <br><br><h6>Sekiro Shadows Die Twice</h6> 
                         <h6 class="opa">MXN $---</h6>
                     </a>

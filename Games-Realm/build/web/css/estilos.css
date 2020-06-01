@@ -107,6 +107,14 @@ a, a:hover, a:focus {
     width: 700px;
     height: 100%;
     color: #E8E8E8;
+    opacity: 2;
+}
+
+.contenedor3{
+    margin-top: 8vw;
+    width: 700px;
+    height: 70%;
+    color: #E8E8E8;
     opacity: 1;
 }
 
@@ -167,5 +175,34 @@ a, a:hover, a:focus {
     margin-left: 20vw;
     width: 50%;
     color: #E8E8E8; 
+    font-family: 'Open Sans', sans-serif;
+}
+
+.btn-3:hover {
+    background-color: #176D7A; 
+    border: white; 
+    color: white;
+    width: 20vw;
+    opacity: 1;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.btn-primary-3 {
+    background-color: #24A5BA; 
+    border: white;
+    font-size: 15px;
+    color: #E8E8E8;
+    width: 20vw;
+    opacity: 1;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.btn-primary-3:hover {
+    background-color: #176D7A; 
+    border: white;
+    font-size: 15px;
+    color: #E8E8E8;
+    width: 20vw;
+    opacity: 1;
     font-family: 'Open Sans', sans-serif;
 }

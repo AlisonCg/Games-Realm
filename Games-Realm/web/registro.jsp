@@ -65,6 +65,7 @@
             <hr><br>
             <h6 style="text-align: center">¿Ya tienes una cuenta?</h6>
             <a class="btn btn-primary btn-lg" href="login.jsp" style="margin-left: 19.5vw">Iniciar Sesión</a>
+            <br><h6><a href="index.jsp">Regresar</a></h6>
         </div>
         <script src="js/JQuery.js" type="text/javascript"></script>
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
