@@ -76,44 +76,68 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarHover">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
+                    <li class="nav-item-2 active">
                         <a class="nav-link" href="index.jsp">HOME<span class="sr-only">(current)</span></a>
                     </li>
+                    <%  HttpSession sesion = request.getSession();
+                            int n = 1;  
+                            if(sesion.getAttribute("r").equals(n))
+                            {
+                    %>
                     <li class="nav-item">
                         <a class="nav-link" href="Novedades.jsp">NOVEDADES</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            PRODUCTOS
+                        </a>
+                        <ul class="dropdown-menu bg-dark" style="font-size: 10px" id="navbarHover">
+                            <li><a class="dropdown-item nav-link" href="Agregar.jsp">AGREGAR</a>   
+                            </li>
+                            <li><a class="dropdown-item nav-link" href="Editar.jsp">EDITAR</a>
+                            </li>
+                            <li><a class="dropdown-item nav-link" href="Eliminar.jsp">ELIMINAR</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <%}else{
+                    %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Novedades.jsp">NOVEDADES</a>
+                    </li>
+                    <%}%>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="Todos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             VIDEOJUEGOS
                         </a>
                         <ul class="dropdown-menu bg-dark" style="font-size: 10px" id="navbarHover">
                             <li><a class="dropdown-item nav-link" href="#">CLASIFICACIÓN<bold>&nbsp;&nbsp;&nbsp;&nbsp;></bold></a>
                                 <ul class="dropdown-menu bg-dark" style="font-size: 10px" id="navbarHover">
-                                    <li><a class="dropdown-item nav-link" href="#">EVERYONE 10+</a></li>
-                                    <li><a class="dropdown-item nav-link" href="#">TEE 13+</a></li>
-                                    <li><a class="dropdown-item nav-link" href="#">MADURO 17+</a></li>
-                                    <li><a class="dropdown-item nav-link" href="#">ADULTOS 18+</a></li>
+                                    <li><a class="dropdown-item nav-link" href="Con_clas?variable=1">EVERYONE 10+</a></li>
+                                    <li><a class="dropdown-item nav-link" href="Con_clas?variable=2">TEE 13+</a></li>
+                                    <li><a class="dropdown-item nav-link" href="Con_clas?variable=3">MADURO 17+</a></li>
+                                    <li><a class="dropdown-item nav-link" href="Con_clas?variable=4">ADULTOS 18+</a></li>
                                 </ul>
                             </li>
                             <li><a class="dropdown-item nav-link" href="#">PLATAFORMA<bold>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></bold></a>
                                 <ul class="dropdown-menu bg-dark" style="font-size: 10px" id="navbarHover">
-                                    <li><a class="dropdown-item nav-link" href="#">PS4</a></li>
-                                    <li><a class="dropdown-item nav-link" href="#">XBOX ONE</a></li>
-                                    <li><a class="dropdown-item nav-link" href="#">NINTENDO SWITCH</a></li>
-                                    <li><a class="dropdown-item nav-link" href="#">PC</a></li>
-                                    <li><a class="dropdown-item nav-link" href="#">XBOX 360</a></li>
-                                    <li><a class="dropdown-item nav-link" href="#">PS3</a></li>
+                                    <li><a class="dropdown-item nav-link" href="Con_pla?variable=1">PS4</a></li>
+                                    <li><a class="dropdown-item nav-link" href="Con_pla?variable=2">XBOX ONE</a></li>
+                                    <li><a class="dropdown-item nav-link" href="Con_pla?variable=3">NINTENDO SWITCH</a></li>
+                                    <li><a class="dropdown-item nav-link" href="Con_pla?variable=4">PC</a></li>
+                                    <li><a class="dropdown-item nav-link" href="Con_pla?variable=5">XBOX 360</a></li>
+                                    <li><a class="dropdown-item nav-link" href="Con_pla?variable=6">PS3</a></li>
                                 </ul>
                             </li>
                             <li><a class="dropdown-item nav-link" href="#">GÉNERO<bold>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></bold></a>
                                 <ul class="dropdown-menu bg-dark" style="font-size: 10px" id="navbarHover">
-                                    <li><a class="dropdown-item nav-link" href="#">PLATAFORMAS</a></li>
-                                    <li><a class="dropdown-item nav-link" href="#">MUNDO ABIERTO</a></li>
-                                    <li><a class="dropdown-item nav-link" href="#">DISPAROS</a></li>
-                                    <li><a class="dropdown-item nav-link" href="#">ACCIÓN Y AVENTURA</a></li>
-                                    <li><a class="dropdown-item nav-link" href="#">PELEAS</a></li>
-                                    <li><a class="dropdown-item nav-link" href="#">JUEGOS DE ROL</a></li>
-                                    <li><a class="dropdown-item nav-link" href="#">CARRERAS</a></li>
+                                    <li><a class="dropdown-item nav-link" href="Con_gen?variable=1">PLATAFORMAS</a></li>
+                                    <li><a class="dropdown-item nav-link" href="Con_gen?variable=2">MUNDO ABIERTO</a></li>
+                                    <li><a class="dropdown-item nav-link" href="Con_gen?variable=3">DISPAROS</a></li>
+                                    <li><a class="dropdown-item nav-link" href="Con_gen?variable=4">ACCIÓN Y AVENTURA</a></li>
+                                    <li><a class="dropdown-item nav-link" href="Con_gen?variable=5">PELEAS</a></li>
+                                    <li><a class="dropdown-item nav-link" href="Con_gen?variable=6">JUEGOS DE ROL</a></li>
+                                    <li><a class="dropdown-item nav-link" href="Con_gen?variable=7">CARRERAS</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -125,10 +149,16 @@
                 <span>
                     <ul class="navbar-nav my-2 my-lg-0">
                         <li class="nav-item">
+                        <%  HttpSession sesionI = request.getSession();
+                            if(sesionI.getAttribute("us")==null){
+                        %>
                           <a class="nav-link" href="login.jsp"><img src="img/ini.png" class="hover" style="height: 25px; width: 25px; margin-right: .5vw">INICIAR SESIÓN</a>
+                        <%  }else{%>
+                          <a class="nav-link" href="logout"><img src="img/ini.png" class="hover" style="height: 25px; width: 25px; margin-right: .5vw">CERRAR SESIÓN</a>
+                        <%}%>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"><img src="img/carrito.png" class="hover" style="height: 25px; width: 25px"></a>
+                          <a class="nav-link" href="carrito.jsp" tabindex="-1" aria-disabled="true"><img src="img/carrito.png" class="hover" style="height: 25px; width: 25px"></a>
                         </li>
                         <li class="nav-item-2">
                             <div id="ocultable" style="display: none">
