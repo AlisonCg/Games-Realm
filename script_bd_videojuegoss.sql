@@ -271,6 +271,8 @@ insert into Videojuego values (18,
 4
 );
 
+insert into Venta values(1, 1);
+
 insert into Inventario values (1, 100, 1);
 
 insert into Cliente (Nombre, Apellido, Email, Pass, Dir_entrega, Nivel) values ("admin", "admin", "Administrador_general", "nom3lo", "direccion", 1);
