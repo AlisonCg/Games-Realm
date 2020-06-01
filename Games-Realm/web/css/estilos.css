@@ -206,3 +206,53 @@ a, a:hover, a:focus {
     opacity: 1;
     font-family: 'Open Sans', sans-serif;
 }
+
+body {
+    padding-top: 60px;
+    color: white;
+}
+
+#consultasxd {
+    background-color: #E8E8E8;
+    width: 30%;
+    padding: 1rem;
+    color: #24A5BA;
+}
+
+#carrito {
+    background-color: #E8E8E8;
+    padding: 3rem;
+    color: #000;
+}
+
+.alad {
+    align-items: right;
+}
+
+#tdetalle {
+    background-color: #E8E8E8;
+    padding-top: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 3rem;
+    color: #000;
+}
+
+.botonlink {
+    color: rgb(229, 230, 230);
+    font-size: 20px;
+    padding: 20px;
+    text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+    background: rgb(23, 109, 102);
+    background: -moz-linear-gradient(90deg, rgb(23, 109, 102) 30%, rgb(59, 142, 133) 71%);
+    background: -webkit-linear-gradient(90deg, rgb(23, 109, 102) 30%, rgb(59, 142, 133) 71%);
+    background: -o-linear-gradient(90deg, rgb(23, 109, 102) 30%, rgb(59, 142, 133) 71%);
+    background: -ms-linear-gradient(90deg, rgb(23, 109, 102) 30%, rgb(59, 142, 133) 71%);
+    background: linear-gradient(0deg, rgb(23, 109, 102) 30%, rgb(59, 142, 133) 71%);
+    -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    -moz-box-shadow:    0px 0px 0px rgba(0, 0, 0, 0);
+    box-shadow:         0px 0px 0px rgba(0, 0, 0, 0);
+}
