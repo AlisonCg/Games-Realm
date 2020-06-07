@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.*;
+import javax.servlet.http.HttpSession;
 /**
  *
  * @author uzias
@@ -55,12 +56,12 @@ public class Todos extends HttpServlet {
 "                    <li class=\"nav-item-2 active\">\n" +
 "                        <a class=\"nav-link\" href=\"index.jsp\">HOME<span class=\"sr-only\">(current)</span></a>\n" +
 "                    </li>\n" +
-"                    <%  HttpSession sesion = request.getSession();\n" +
-"                            int n = 1;  \n" +
-"                            if(sesion.getAttribute(\"r\").equals(n))\n" +
-"                            {\n" +
-"                    %>\n" +
-"                    <li class=\"nav-item\">\n" +
+"                    </li>\n");
+                     HttpSession sesion = request.getSession();
+                            int n=1;
+                            if(sesion.getAttribute("r").equals(n)){
+
+out.println("                    <li class=\"nav-item\">\n" +
 "                        <a class=\"nav-link\" href=\"Novedades.jsp\">NOVEDADES</a>\n" +
 "                    </li>\n" +
 "                    <li class=\"nav-item dropdown\">\n" +
@@ -68,21 +69,16 @@ public class Todos extends HttpServlet {
 "                            PRODUCTOS\n" +
 "                        </a>\n" +
 "                        <ul class=\"dropdown-menu bg-dark\" style=\"font-size: 10px\" id=\"navbarHover\">\n" +
-"                            <li><a class=\"dropdown-item nav-link\" href=\"Agregar.jsp\">AGREGAR</a>   \n" +
-"                            </li>\n" +
-"                            <li><a class=\"dropdown-item nav-link\" href=\"Editar.jsp\">EDITAR</a>\n" +
-"                            </li>\n" +
-"                            <li><a class=\"dropdown-item nav-link\" href=\"Eliminar.jsp\">ELIMINAR</a>\n" +
-"                            </li>\n" +
+"                            <li><a class=\"dropdown-item nav-link\" href=\"Agregar.jsp\">AGREGAR</a>\n" +
 "                        </ul>\n" +
-"                    </li>\n" +
-"                    <%}else{\n" +
-"                    %>\n" +
-"                    <li class=\"nav-item\">\n" +
+"                    </li>\n" );
+}else{
+
+out.println("                    <li class=\"nav-item\">\n" +
 "                        <a class=\"nav-link\" href=\"Novedades.jsp\">NOVEDADES</a>\n" +
-"                    </li>\n" +
-"                    <%}%>\n" +
-"                    <li class=\"nav-item dropdown\">\n" +
+"                    </li>\n" );
+}
+out.println("                    <li class=\"nav-item dropdown\">\n" +
 "                        <a class=\"nav-link dropdown-toggle\" href=\"Todos\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n" +
 "                            VIDEOJUEGOS\n" +
 "                        </a>\n" +
@@ -124,15 +120,14 @@ public class Todos extends HttpServlet {
 "                </div>\n" +
 "                <span>\n" +
 "                    <ul class=\"navbar-nav my-2 my-lg-0\">\n" +
-"                        <li class=\"nav-item\">\n" +
-"                        <%  HttpSession sesionI = request.getSession();\n" +
-"                            if(sesionI.getAttribute(\"us\")==null){\n" +
-"                        %>\n" +
-"                          <a class=\"nav-link\" href=\"login.jsp\"><img src=\"img/ini.png\" class=\"hover\" style=\"height: 25px; width: 25px; margin-right: .5vw\">INICIAR SESIÓN</a>\n" +
-"                        <%  }else{%>\n" +
-"                          <a class=\"nav-link\" href=\"logout\"><img src=\"img/ini.png\" class=\"hover\" style=\"height: 25px; width: 25px; margin-right: .5vw\">CERRAR SESIÓN</a>\n" +
-"                        <%}%>\n" +
-"                        </li>\n" +
+"                        <li class=\"nav-item\">\n" );
+HttpSession sesionI = request.getSession();
+                           if(sesionI.getAttribute("us")==null){
+out.println("                          <a class=\"nav-link\" href=\"login.jsp\"><img src=\"img/ini.png\" class=\"hover\" style=\"height: 25px; width: 25px; margin-right: .5vw\">INICIAR SESIÓN</a>\n" );
+ }else{
+out.println("                          <a class=\"nav-link\" href=\"logout\"><img src=\"img/ini.png\" class=\"hover\" style=\"height: 25px; width: 25px; margin-right: .5vw\">CERRAR SESIÓN</a>\n" );
+        }
+out.println("                        </li>\n" +
 "                        <li class=\"nav-item\">\n" +
 "                          <a class=\"nav-link\" href=\"carrito.jsp\" tabindex=\"-1\" aria-disabled=\"true\"><img src=\"img/carrito.png\" class=\"hover\" style=\"height: 25px; width: 25px\"></a>\n" +
 "                        </li>\n" +

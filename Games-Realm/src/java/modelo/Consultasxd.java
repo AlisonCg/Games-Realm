@@ -178,7 +178,7 @@ public class Consultasxd {
             return V;
         }
     }
-    
+    // aqui es donde me equivoque, le estoy registrando el 
     public static void Reg_Venta(int id, int id_user){
         Conexion c = new Conexion();
         Connection con = null;
