@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        <script src="js/validar.js" type="text/javascript"></script>
+        <script src="js/administrador.js" type="text/javascript"></script>
     </head>
     <body background="img/fon_1.jpg"
     style="background-repeat: no-repeat !important;
@@ -37,9 +37,8 @@
                         <a class="nav-link" href="index.jsp">HOME<span class="sr-only">(current)</span></a>
                     </li>
                     <%  HttpSession sesion = request.getSession();
-                            int n = 1;  
-                            if(sesion.getAttribute("r").equals(n))
-                            {
+                            int n=1;
+                            if(sesion.getAttribute("r").equals(n)){
                     %>
                     <li class="nav-item">
                         <a class="nav-link" href="Novedades.jsp">NOVEDADES</a>
@@ -49,12 +48,7 @@
                             PRODUCTOS
                         </a>
                         <ul class="dropdown-menu bg-dark" style="font-size: 10px" id="navbarHover">
-                            <li><a class="dropdown-item nav-link" href="Agregar.jsp">AGREGAR</a>   
-                            </li>
-                            <li><a class="dropdown-item nav-link" href="Editar.jsp">EDITAR</a>
-                            </li>
-                            <li><a class="dropdown-item nav-link" href="Eliminar.jsp">ELIMINAR</a>
-                            </li>
+                            <li><a class="dropdown-item nav-link" href="Agregar.jsp">AGREGAR</a>
                         </ul>
                     </li>
                     <%}else{
@@ -132,10 +126,9 @@
                 </span>
             </div>
         </nav>
-                        
         <br><br>
         <div oncopy="return false" onpaste="return false" ondragstart="return false;" ondrop="return false;" class="contenedor2 container" style="font-family: 'Roboto', sans-serif; background-color: #0C0C0C; height: 80%; border-radius: 10px; opacity:.9; margin-top: 3vw">
-            <form action="guardar.jsp" name="formulario" onsubmit="return valido(this)">
+            <form action="guardarp.jsp" name="formulario" onsubmit="return valido(this)">
                 <div class="form-group"><br>
                 <h2>Agregar Producto</h2>
                 <hr style="display: block; 
@@ -150,38 +143,75 @@
                     <div class="row">
                         <input class="form-control" type="hidden" name="txtid" value="--">
                         <div class="col clearfix">
-                            <input oncopy="return false" onpaste="return false" class="form-control" type="text" name="txtnom" placeholder="Nombre" autocomplete="off" required="required">
+                            <input onkeypress="return cuentas(event)" oncopy="return false" onpaste="return false" class="form-control" type="text" name="txtnom" placeholder="Nombre" autocomplete="off" required="required">
                         </div>
                         <div class="col clearfix">
-                            <input id="contra" class="form-control" type="password" name="txtcontra" placeholder="Contraseña" required="required">
+                            <input onkeypress="return soloLetras(event)" oncopy="return false" onpaste="return false" class="form-control" type="text" name="txtE" placeholder="Edicion" autocomplete="off" required="required">
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="row">
                         <div class="col clearfix">
-                            <input oncopy="return false" onpaste="return false" class="form-control" type="text" name="txtappa" placeholder="Precio 0.00" autocomplete="off" required="required">
+                            <input oncopy="return true" onpaste="return true" class="form-control" type="text" name="txtI" placeholder="URL de Imagen" autocomplete="off" required="required">
                         </div>
                         <div class="col clearfix">
-                            <input id="contra2" class="form-control" type="password" name="txtcontra2" placeholder="Confirmar contraseña" required="required">
+                            <input onkeypress="return validar(event)" oncopy="return false" onpaste="return false" class="form-control" type="text" name="txtA" placeholder="Año" autocomplete="off" required="required">
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="row">
                         <div class="col clearfix">
-                            <input oncopy="return false" onpaste="return false" class="form-control" type="email" name="email_contacto" id="email_contacto" required="required" placeholder="Email" autocomplete="off">
+                            <textarea oncopy="return false" onpaste="return false" class="form-control" type="text" name="txtD" placeholder="Descripción" autocomplete="off" required="required"></textarea>
                         </div>
                         <div class="col clearfix">
-                            <input class="form-control" type="hidden" name="txtd" value="direccion">
-                            <input class="form-control" type="hidden" name="txtni" value="2">
+                            <input onkeypress="return filterFloat(event,this);" oncopy="return false" onpaste="return false" class="form-control" type="text" name="txtP" placeholder="Precio" autocomplete="off" required="required">
                         </div>
                     </div>
                 </div>
-                <input style="background-color: #24A5BA; border: white; margin-top: 1.5vw; color: white" class="btn btn-block" type="submit" name="accion" value="Crear cuenta">
-            </form><br>
-            <hr><br>
-            <br><h6><a href="index.jsp">Regresar</a></h6>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col clearfix">
+                            <h6>Clasificación</h6>
+                            <select id="clasificacion" class="form-control">
+                                <option id="1" value="1">Everyone 10+</option>
+                                <option id="1" value="2">Teen 13+</option>
+                                <option id="1" value="3">Maduro 17+</option>
+                                <option id="1" value="4">Adultos 18+</option>
+                            </select>
+                        </div>
+                        <div class="col clearfix">
+                            <h6>Género</h6>
+                            <select id="genero" class="form-control">
+                                <option id="1" value="1">Plataformas</option>
+                                <option id="1" value="2">Mundo Abierto</option>
+                                <option id="1" value="3">Disparos</option>
+                                <option id="1" value="4">Acción Y Aventura</option>
+                                <option id="1" value="1">Peleas</option>
+                                <option id="1" value="2">Juegos De Rol</option>
+                                <option id="1" value="3">Carreras</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col clearfix">
+                            <h6>Plataforma</h6>
+                            <select id="plataforma" class="form-control">
+                                <option id="1" value="1">PS4</option>
+                                <option id="1" value="2">XBOX ONE</option>
+                                <option id="1" value="3">Nintendo Switch</option>
+                                <option id="1" value="4">PC</option>
+                                <option id="1" value="1">XBOX 360</option>
+                                <option id="1" value="2">PS3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <input style="background-color: #24A5BA; border: white; margin-top: 1.5vw; color: white" class="btn btn-block" type="submit" name="accion" value="Agregar Producto">
+            </form>
         </div>
         <script src="js/JQuery.js" type="text/javascript"></script>
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
