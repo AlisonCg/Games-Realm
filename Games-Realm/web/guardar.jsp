@@ -80,9 +80,8 @@
                         <a class="nav-link" href="index.jsp">HOME<span class="sr-only">(current)</span></a>
                     </li>
                     <%  HttpSession sesion = request.getSession();
-                            int n = 1;  
-                            if(sesion.getAttribute("r").equals(n))
-                            {
+                            int n=1;
+                            if(sesion.getAttribute("r").equals(n)){
                     %>
                     <li class="nav-item">
                         <a class="nav-link" href="Novedades.jsp">NOVEDADES</a>
@@ -92,12 +91,7 @@
                             PRODUCTOS
                         </a>
                         <ul class="dropdown-menu bg-dark" style="font-size: 10px" id="navbarHover">
-                            <li><a class="dropdown-item nav-link" href="Agregar.jsp">AGREGAR</a>   
-                            </li>
-                            <li><a class="dropdown-item nav-link" href="Editar.jsp">EDITAR</a>
-                            </li>
-                            <li><a class="dropdown-item nav-link" href="Eliminar.jsp">ELIMINAR</a>
-                            </li>
+                            <li><a class="dropdown-item nav-link" href="Agregar.jsp">AGREGAR</a>
                         </ul>
                     </li>
                     <%}else{
