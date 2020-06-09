@@ -2,12 +2,14 @@
     Document   : index
     Created on : 26/05/2020, 04:10:56 AM
     Author     : alis0
+    buen programa
 --%>
 
 <%@page language="java" import="java.sql.*"%> 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session="true"%>
 <!DOCTYPE html>
-
+<html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Games Realm | Home</title>
@@ -34,7 +36,7 @@
                         <a class="nav-link" href="index.jsp">HOME<span class="sr-only">(current)</span></a>
                     </li>
                     <%  HttpSession sesion = request.getSession();
-                            int n = 1;  
+                        int n=1;
                             if(sesion.getAttribute("r").equals(n))
                             {
                     %>
@@ -231,3 +233,4 @@
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
     </body>
+</html>
