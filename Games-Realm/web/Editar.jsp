@@ -4,13 +4,8 @@
     Author     : alis0
 --%>
 
-<%-- 
-    Document   : Agregar
-    Created on : 31/05/2020, 07:05:07 PM
-    Author     : alis0
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.sql.*,java.util.*,java.text.*" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -42,9 +37,8 @@
                         <a class="nav-link" href="index.jsp">HOME<span class="sr-only">(current)</span></a>
                     </li>
                     <%  HttpSession sesion = request.getSession();
-                            int n = 1;  
-                            if(sesion.getAttribute("r").equals(n))
-                            {
+                            int n=1;
+                            if(sesion.getAttribute("r").equals(n)){
                     %>
                     <li class="nav-item">
                         <a class="nav-link" href="Novedades.jsp">NOVEDADES</a>
@@ -54,12 +48,7 @@
                             PRODUCTOS
                         </a>
                         <ul class="dropdown-menu bg-dark" style="font-size: 10px" id="navbarHover">
-                            <li><a class="dropdown-item nav-link" href="Agregar.jsp">AGREGAR</a>   
-                            </li>
-                            <li><a class="dropdown-item nav-link" href="Editar.jsp">EDITAR</a>
-                            </li>
-                            <li><a class="dropdown-item nav-link" href="Eliminar.jsp">ELIMINAR</a>
-                            </li>
+                            <li><a class="dropdown-item nav-link" href="Agregar.jsp">AGREGAR</a>
                         </ul>
                     </li>
                     <%}else{
@@ -137,35 +126,38 @@
                 </span>
             </div>
         </nav>
+                        
         <br><br>
-        <div oncopy="return false" onpaste="return false" ondragstart="return false;" ondrop="return false;" class="contenedor2 container" style="font-family: 'Roboto', sans-serif; background-color: #0C0C0C; height: 45%; border-radius: 10px; opacity:.9; margin-top: 8vw">
+        <div oncopy="return false" onpaste="return false" ondragstart="return false;" ondrop="return false;" class="contenedor2 container" style="font-family: 'Roboto', sans-serif; background-color: #0C0C0C; height: 80%; border-radius: 10px; opacity:.9; margin-top: 3vw">
             <form action="guardar.jsp" name="formulario" onsubmit="return valido(this)">
-                <div class="form-group">
-                <h2><img src="img/GRL.jpg" height="100" width="100">Crear Cuenta</h2>
-                <hr>
+                <div class="form-group"><br>
+                <h2>Agregar Producto</h2>
+                <hr style="display: block; 
+                height: 1px;
+                border: 0; 
+                border-top: 2px solid #FFFFFF;
+                margin: 1em 0; 
+                padding: 0;">
                 </div>
-                <label style="color: white"><h9>Nota: Todos los datos son obligatorios</h9></label><br>
-                <label style="color: white"><h9>*Escribe tus nombres y apellidos sin acentos y con mayúsculas y minúsculas</h9></label>
-                <br><br>
+                <label style="color: white"><h9>Nota: Escribe todos los datos correctamente del producto a agregar</h9></label><br><br>
                 <div class="form-group">
                     <div class="row">
+                        <input class="form-control" type="hidden" name="txtid" value="--">
                         <div class="col clearfix">
-                            <h4>Información Personal</h4>
-                            <input onkeypress="return soloLetrases(event)" oncopy="return false" onpaste="return false" class="form-control" type="text" name="txtnom" placeholder="Nombre" autocomplete="off" required="required">
+                            <input oncopy="return false" onpaste="return false" class="form-control" type="text" name="txtnom" placeholder="Nombre" autocomplete="off" required="required">
                         </div>
                         <div class="col clearfix">
-                            <h4>Información De Inicio De Sesión</h4>
-                            <input onkeypress="return cuentas(event)" id="contra" class="form-control" type="password" name="txtcontra" placeholder="Contraseña" required="required">
+                            <input id="contra" class="form-control" type="password" name="txtcontra" placeholder="Contraseña" required="required">
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="row">
                         <div class="col clearfix">
-                            <input onkeypress="return soloLetrases(event)" oncopy="return false" onpaste="return false" class="form-control" type="text" name="txtappa" placeholder="Apellido" autocomplete="off" required="required">
+                            <input oncopy="return false" onpaste="return false" class="form-control" type="text" name="txtappa" placeholder="Precio 0.00" autocomplete="off" required="required">
                         </div>
                         <div class="col clearfix">
-                            <input onkeypress="return cuentas(event)" id="contra2" class="form-control" type="password" name="txtcontra2" placeholder="Confirmar contraseña" required="required">
+                            <input id="contra2" class="form-control" type="password" name="txtcontra2" placeholder="Confirmar contraseña" required="required">
                         </div>
                     </div>
                 </div>
@@ -177,15 +169,12 @@
                         <div class="col clearfix">
                             <input class="form-control" type="hidden" name="txtd" value="direccion">
                             <input class="form-control" type="hidden" name="txtni" value="2">
-                            <h6>* Campos Requeridos</h6>
                         </div>
                     </div>
                 </div>
                 <input style="background-color: #24A5BA; border: white; margin-top: 1.5vw; color: white" class="btn btn-block" type="submit" name="accion" value="Crear cuenta">
             </form><br>
             <hr><br>
-            <h6 style="text-align: center">¿Ya tienes una cuenta?</h6>
-            <a class="btn btn-primary btn-lg" href="login.jsp" style="margin-left: 19.5vw">Iniciar Sesión</a>
             <br><h6><a href="index.jsp">Regresar</a></h6>
         </div>
         <script src="js/JQuery.js" type="text/javascript"></script>
@@ -193,4 +182,3 @@
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
     </body>
 </html>
-
