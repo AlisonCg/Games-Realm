@@ -8,6 +8,42 @@
         <servlet-name>logout</servlet-name>
         <servlet-class>controlador.logout</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Con_clas</servlet-name>
+        <servlet-class>modelo.Con_clas</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Con_gen</servlet-name>
+        <servlet-class>modelo.Con_gen</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Con_pla</servlet-name>
+        <servlet-class>modelo.Con_pla</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Consultasxd</servlet-name>
+        <servlet-class>modelo.Consultasxd</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Detallazos</servlet-name>
+        <servlet-class>modelo.Detallazos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Todos</servlet-name>
+        <servlet-class>modelo.Todos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Venta</servlet-name>
+        <servlet-class>modelo.Venta</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>guardarp</servlet-name>
+        <servlet-class>guardarp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>guardarpr</servlet-name>
+        <servlet-class>modelo.guardarpr</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Controlador</servlet-name>
         <url-pattern>/Controlador</url-pattern>
@@ -15,6 +51,42 @@
     <servlet-mapping>
         <servlet-name>logout</servlet-name>
         <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Con_clas</servlet-name>
+        <url-pattern>/Con_clas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Con_gen</servlet-name>
+        <url-pattern>/Con_gen</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Con_pla</servlet-name>
+        <url-pattern>/Con_pla</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Consultasxd</servlet-name>
+        <url-pattern>/Consultasxd</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Detallazos</servlet-name>
+        <url-pattern>/Detallazos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Todos</servlet-name>
+        <url-pattern>/Todos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Venta</servlet-name>
+        <url-pattern>/Venta</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>guardarp</servlet-name>
+        <url-pattern>/guardarp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>guardarpr</servlet-name>
+        <url-pattern>/guardarpr</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
