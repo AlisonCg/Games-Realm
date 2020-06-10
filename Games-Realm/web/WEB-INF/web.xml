@@ -37,12 +37,12 @@
         <servlet-class>modelo.Venta</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>guardarp</servlet-name>
-        <servlet-class>guardarp</servlet-class>
+        <servlet-name>Compra</servlet-name>
+        <servlet-class>modelo.Compra</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>guardarpr</servlet-name>
-        <servlet-class>modelo.guardarpr</servlet-class>
+        <servlet-name>Ticket</servlet-name>
+        <servlet-class>modelo.Ticket</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Controlador</servlet-name>
@@ -81,12 +81,12 @@
         <url-pattern>/Venta</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>guardarp</servlet-name>
-        <url-pattern>/guardarp</url-pattern>
+        <servlet-name>Compra</servlet-name>
+        <url-pattern>/Compra</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>guardarpr</servlet-name>
-        <url-pattern>/guardarpr</url-pattern>
+        <servlet-name>Ticket</servlet-name>
+        <url-pattern>/Ticket</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
