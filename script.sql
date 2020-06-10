@@ -8,7 +8,7 @@ create table Inventario(id_inv INT NOT NULL PRIMARY KEY, Cantidad_inv INT NOT NU
 create table Ticket(id_ticket INT NOT NULL PRIMARY KEY, Nombre_servicio VARCHAR(45) NOT NULL, Fecha DATE NOT NULL, Subtotal DOUBLE NOT NULL, Envio DOUBLE NOT NULL, Impuestos DOUBLE NOT NULL, Total DOUBLE NOT NULL, id_venta INT NOT NULL);
 create table Venta(id_venta INT NOT NULL PRIMARY KEY, id_video INT NOT NULL);
 create table Historial(id_historial INT NOT NULL PRIMARY KEY, id_ticket INT NOT NULL);
-create table Cliente (id_cliente INT NOT NULL PRIMARY KEY AUTO_INCREMENT, Nombre VARCHAR (45) NOT NULL, Apellido VARCHAR(45), Email VARCHAR(76) NOT NULL, Pass VARCHAR(45) NOT NULL, Dir_entrega VARCHAR(150) NOT NULL,  Nivel INT, id_cmp INT, id_venta INT, id_historial INT);
+create table Cliente (id_cliente INT NOT NULL PRIMARY KEY AUTO_INCREMENT, Nombre VARCHAR (45) NOT NULL, Apellido VARCHAR(45), Email VARCHAR(76) NOT NULL, Pass VARCHAR(45) NOT NULL, Dir_entrega VARCHAR(150),  Nivel INT, id_cmp INT, id_venta INT, id_historial INT);
 create table CMetodoPago(id_cmp INT NOT NULL PRIMARY KEY, tipo_pago VARCHAR(45) NOT NULL);
 create table CGenero (id_genero INT NOT NULL PRIMARY KEY, tipo_genero VARCHAR(45) NOT NULL);
 /*Aqui se agregaron las llaves foraneas*/
@@ -264,6 +264,7 @@ insert into Videojuego values (18,
 );
 
 insert into Venta values(1, 1);
+insert into Ticket values (1, "SERVICIO", "2020-06-09", 56.3, 23.3, 100, 100, 1);
 
 insert into Inventario values (1, 100, 1);
 insert into Inventario values (2, 100, 2);
